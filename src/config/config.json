@@ -1,5 +1,5 @@
 {
-  "name": "Simpsord - Simpsons (cyber yellow)",
+  "name": "Simpstalk - Talk (pmdpaula)",
   "theme": {
     "colors": {
       "primary": {
@@ -11,8 +11,8 @@
         "500": "#FED10B",
         "600": "#CBA601",
         "700": "#8E7401",
-        "800": "#655301",
-        "900": "#3D3200"
+        "800": "#514200",
+        "900": "#292100"
       },
       "neutrals": {
         "000": "#FFFFFF",
