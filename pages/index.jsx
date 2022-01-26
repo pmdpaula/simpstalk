@@ -1,6 +1,7 @@
 import {
   Box, Button, Text, TextField, Image,
 } from '@skynexui/components';
+import SimpsButton from '../src/components/commons/SimpsButton/SimpsButton';
 import Titulo from '../src/components/commons/Titulo/Titulo';
 import appConfig from '../src/config/config.json';
 import GlobalStyle from '../src/theme/GlobalStyle';
@@ -85,7 +86,7 @@ export default function PaginaInicial() {
                 },
               }}
             />
-            <Button
+            {/* <Button
               type="submit"
               label="Entrar"
               fullWidth
@@ -95,7 +96,8 @@ export default function PaginaInicial() {
                 mainColorLight: appConfig.theme.colors.primary[400],
                 mainColorStrong: appConfig.theme.colors.primary[600],
               }}
-            />
+            /> */}
+            <SimpsButton type="submit">Entrar</SimpsButton>
           </Box>
           {/* Formulário */}
 
