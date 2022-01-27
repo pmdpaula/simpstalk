@@ -6,7 +6,6 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
-    'plugin:@next/next/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:react-hooks/recommended',
@@ -25,6 +24,14 @@ module.exports = {
     'simple-import-sort',
   ],
   settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
+  },
+  rules: {
     'react/jsx-filename-extension': [
       'warn',
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
@@ -68,7 +75,11 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     'react/jsx-no-bind': [
       'error',
-      { allowFunctions: true, ignoreDOMComponents: true },
+      {
+        allowFunctions: true,
+        ignoreDOMComponents: true,
+        allowArrowFunctions: true,
+      },
     ],
   },
 };
