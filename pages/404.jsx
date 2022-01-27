@@ -1,4 +1,4 @@
-import { Box, Image, Text } from '@skynexui/components';
+import { Box, Image } from '@skynexui/components';
 
 import appConfig from '../src/config/config.json';
 
