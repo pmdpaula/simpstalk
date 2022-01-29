@@ -1,7 +1,6 @@
-export default function GlobalStyle() {
-  return (
-    <style global jsx>
-      {`
+const GlobalStyle = () => (
+  <style global jsx>
+    {`
       * {
         margin: 0;
         padding: 0;
@@ -11,8 +10,10 @@ export default function GlobalStyle() {
       body {
         font-family: 'Open Sans', sans-serif;
       }
-      /* App fit Height */ 
-      html, body, #__next {
+      /* App fit Height */
+      html,
+      body,
+      #__next {
         min-height: 100vh;
         display: flex;
         flex: 1;
@@ -23,9 +24,9 @@ export default function GlobalStyle() {
       #__next > * {
         flex: 1;
       }
-      /* ./App fit Height */ 
+      /* ./App fit Height */
     `}
+  </style>
+);
 
-    </style>
-  );
-}
+export default GlobalStyle;
