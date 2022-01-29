@@ -118,8 +118,9 @@ const ChatPage = () => {
               setMensagem(event.target.value);
             }}
             onKeyPress={(event) => {
+              // console.log(event);
               if (event.key === 'Enter' && event.ctrlKey) {
-                event.preventDefault();
+                // event.preventDefault();
                 handleNovaMensagem(mensagem);
               }
             }}

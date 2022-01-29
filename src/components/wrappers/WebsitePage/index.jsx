@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import appConfig from '../../../config/config.json';
 import SEO from '../../foundation/SEO';
 
-const WebsitePageWrapper = ({ children, seoProps, footerProps }) => {
+const WebsitePageWrapper = ({ children, seoProps }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

@@ -9,6 +9,7 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:react-hooks/recommended',
+    'plugin:@next/next/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
