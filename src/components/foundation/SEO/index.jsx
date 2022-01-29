@@ -3,9 +3,9 @@ import Head from 'next/head';
 const SEO = ({ headTitle }) => {
   const hasheadTitle = Boolean(headTitle);
 
-  const baseTitle = 'Simpstalk';
-  // const title = hasheadTitle ? `${headTitle} | ${baseTitle}` : baseTitle;
-  const title = baseTitle;
+  const baseTitle = 'Simpstalk - Imersão React Alura';
+  const title = hasheadTitle ? `${headTitle} | ${baseTitle}` : baseTitle;
+  // const title = baseTitle;
 
   // eslint-disable-next-line prettier/prettier
   const description = 'Chat desenvolvido na Imersão React 4 da Alura';
