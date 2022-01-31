@@ -2,24 +2,29 @@ module.exports = {
   env: {
     browser: true,
     es2020: true,
+    node: true,
   },
   extends: [
     'plugin:react/recommended',
     'airbnb',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:import/typescript',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@next/next/recommended',
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 11,
+    ecmaVersion: 13,
     sourceType: 'module',
   },
   plugins: [
     'react',
+    '@typescript-eslint',
     'prettier',
     'eslint-plugin-prettier',
     'simple-import-sort',
@@ -76,11 +81,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     'react/jsx-no-bind': [
       'error',
-      {
-        allowFunctions: true,
-        ignoreDOMComponents: true,
-        allowArrowFunctions: true,
-      },
+      { allowFunctions: true, ignoreDOMComponents: true },
     ],
   },
 };
