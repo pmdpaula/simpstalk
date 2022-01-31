@@ -1,34 +1,67 @@
 {
   "name": "simpstalk",
+  "author": {
+    "name": "Pedro Machado de Paula",
+    "email": "pmdpaula@yahoo.com.br"
+  },
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "export": "next build && next export",
+    "postinstall": "husky install",
+    "lint": "eslint --ignore-path .gitignore .",
+    "commit": "cz",
+    "test:integration:open": "cypress open",
+    "test:integration": "cypress run --headless"
   },
   "dependencies": {
-    "@skynexui/components": "^1.23.9",
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@mui/styles": "^5.2.3",
+    "@mui/system": "^5.2.3",
+    "@skynexui/components": "^1.24.2",
+    "@supabase/supabase-js": "^1.29.4",
+    "color": "^4.1.0",
+    "lodash": "^4.17.21",
     "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-is": "^17.0.2",
-    "styled-components": "^5.2.3"
+    "next-themes": "^0.0.15",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.12.0",
-    "eslint": "^8.7.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "^12.0.9",
-    "eslint-plugin-import": "^2.25.4",
+    "@types/color": "^3.0.2",
+    "@types/lodash": "^4.14.177",
+    "@types/node": "^17.0.13",
+    "@types/react": "latest",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.4.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-next": "latest",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.5.1"
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "prettier": "2.5.1",
+    "typescript": "latest"
+  },
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

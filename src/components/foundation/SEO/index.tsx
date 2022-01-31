@@ -1,11 +1,15 @@
 import Head from 'next/head';
 
-const SEO = ({ headTitle }) => {
+interface SEOProps {
+  headTitle?: string;
+}
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+const SEO = ({ headTitle }: SEOProps) => {
   const hasheadTitle = Boolean(headTitle);
 
-  const baseTitle = 'Simpstalk - Imersão React Alura';
+  const baseTitle = 'AxeBlade Software - SISCOINTI';
   const title = hasheadTitle ? `${headTitle} | ${baseTitle}` : baseTitle;
-  // const title = baseTitle;
 
   // eslint-disable-next-line prettier/prettier
   const description = 'Chat desenvolvido na Imersão React 4 da Alura';
