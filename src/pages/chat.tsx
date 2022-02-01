@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import { useTheme } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
@@ -19,6 +20,7 @@ const ChatPage = () => {
   const [mensagem, setMensagem] = useState<string>('');
   // eslint-disable-next-line prettier/prettier
   const [listaDeMensagens, setListaDeMensagens] = useState<MessageProps[]>([]);
+  const [isLoadingMessages, setIsLoadingMessages] = useState<boolean>(true);
 
   const router = useRouter();
   const { username } = router.query;
@@ -33,6 +35,9 @@ const ChatPage = () => {
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     setListaDeMensagens(data!);
+    setTimeout(() => {
+      setIsLoadingMessages(false);
+    }, 2000);
   }
 
   useEffect(() => {
@@ -112,7 +117,7 @@ const ChatPage = () => {
           mensagens={listaDeMensagens}
           username={username}
           deleteMessageById={deleteMessageById}
-          // setListaDeMensagens={setListaDeMensagens}
+          isLoadingMessages={isLoadingMessages}
         />
 
         {/* Formulário de entrada */}
