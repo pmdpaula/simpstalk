@@ -2,8 +2,8 @@ import { useTheme } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Image from 'next/image';
 
-import websitePageHOC from '../components/wrappers/WebsitePage/hoc';
-import { ThemeProps } from '../theme/themeLight';
+import websitePageHOC from '../src/components/wrappers/WebsitePage/hoc';
+import { ThemeProps } from '../src/theme/themeLight';
 
 const Page404 = (): JSX.Element => {
   const theme = useTheme<ThemeProps>(); // useTheme from MUI

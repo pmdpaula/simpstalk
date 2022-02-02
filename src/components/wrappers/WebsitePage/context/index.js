@@ -12,10 +12,12 @@ export const WebsitePageContext = createContext();
 export const WrapperProvider = ({ children }) => {
   const { resolvedTheme } = useTheme();
   const [currentTheme, setCurrentTheme] = useState(themeLight);
+  // eslint-disable-next-line prefer-const
+  let messageIdToDelete = 0;
 
   const providerValue = useMemo(
-    () => ({ resolvedTheme, currentTheme, setCurrentTheme }),
-    [currentTheme, resolvedTheme],
+    () => ({ resolvedTheme, currentTheme, setCurrentTheme, messageIdToDelete }),
+    [currentTheme, resolvedTheme, messageIdToDelete],
   );
 
   return (

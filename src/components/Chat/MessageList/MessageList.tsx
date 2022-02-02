@@ -4,32 +4,37 @@ import { useTheme } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import { Image as ImageSkynex } from '@skynexui/components';
+import { useContext } from 'react';
 
 import { ThemeProps } from '../../../theme/themeLight';
 import LoadingDonut from '../../LoadingDonut/LoadingDonut';
+import { WebsitePageContext } from '../../wrappers/WebsitePage/context/index';
 // eslint-disable-next-line import/no-unresolved
 import { MessageProps } from './message';
 
 interface MessageListProps {
   mensagens: MessageProps[];
-  username: any;
+  // username: any;
   deleteMessageById: any;
   isLoadingMessages: boolean;
 }
 
 const MessageList = ({
   mensagens,
-  username,
+  // username,
   deleteMessageById,
   isLoadingMessages,
 }: MessageListProps) => {
   const theme = useTheme<ThemeProps>(); // useTheme from MUI
+  const websitePageContext = useContext(WebsitePageContext);
+
   return (
     <Box
       // component="ul"
       sx={{
         position: 'relative',
         overflowY: 'scroll',
+        flexWrap: 'wrap',
         display: 'flex',
         flexDirection: 'column-reverse',
         flex: 1,
@@ -46,6 +51,7 @@ const MessageList = ({
       {/* eslint-disable-next-line prettier/prettier */}
       {!isLoadingMessages && mensagens.map((mensagem: MessageProps) => {
           const createdAt = new Date(mensagem.created_at);
+          // console.log(mensagem.msg_text);
 
           return (
             // eslint-disable-next-line react/jsx-indent
@@ -76,7 +82,7 @@ const MessageList = ({
                       display: 'inline-block',
                       marginRight: '8px',
                     }}
-                    src={`https://github.com/${username}.png`}
+                    src={`https://github.com/${mensagem.from}.png`}
                   />
                   <Typography component="strong">{mensagem.from}</Typography>
                   <Typography
@@ -99,7 +105,15 @@ const MessageList = ({
                     marginBottom: '0.1em',
                   }}
                 />
-                {mensagem.msg_text}
+                {mensagem.msg_text.startsWith(':sticker:') ? (
+                  <ImageSkynex
+                    src={mensagem.msg_text.replace(':sticker:', '')}
+                    styleSheet={{ maxWidth: '160px' }}
+                  />
+                ) : (
+                  mensagem.msg_text
+                )}
+                {/* {mensagem.msg_text} */}
               </Box>
               <Tooltip
                 title="Apagar mensagem"
@@ -115,6 +129,7 @@ const MessageList = ({
                   // eslint-disable-next-line react/jsx-no-bind
                   onClick={() => {
                     deleteMessageById(mensagem.id);
+                    websitePageContext.messageIdToDelete = mensagem.id;
                   }}
                 >
                   <HighlightOffSharpIcon color="action" sx={{ fontSize: 14 }} />

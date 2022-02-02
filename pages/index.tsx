@@ -11,10 +11,10 @@ import { useRouter } from 'next/router';
 // import { useTheme as useThemeNT } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-import PageSquare from '../components/commons/PageSquare/PageSquare';
-import websitePageHOC from '../components/wrappers/WebsitePage/hoc';
-import appConfig from '../config/config.json';
-import { ThemeProps } from '../theme/themeLight';
+import PageSquare from '../src/components/commons/PageSquare/PageSquare';
+import websitePageHOC from '../src/components/wrappers/WebsitePage/hoc';
+import appConfig from '../src/config/config.json';
+import { ThemeProps } from '../src/theme/themeLight';
 
 const Home: NextPage = () => {
   // const { resolvedTheme } = useThemeNT(); // useTheme from next-themes
