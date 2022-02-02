@@ -5,8 +5,8 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import { useTheme } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
+// import { useTheme } from '@mui/material/styles';
+// import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 
 import ButtonSendSticker from '../../ButtonSendSticker/ButtonSendSticker';

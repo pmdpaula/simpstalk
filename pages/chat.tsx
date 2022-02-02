@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import supabaseClient from '../src/api/supbaseClient';
 import ChatHeader from '../src/components/Chat/ChatHeader/ChatHeader';
@@ -10,7 +10,7 @@ import { MessageProps } from '../src/components/Chat/MessageList/message';
 import MessageList from '../src/components/Chat/MessageList/MessageList';
 import PageSquare from '../src/components/commons/PageSquare/PageSquare';
 import FormSendMessage from '../src/components/patterns/FormSendMessage/FormSendMessage';
-import { WebsitePageContext } from '../src/components/wrappers/WebsitePage/context/index';
+// import { WebsitePageContext } from '../src/components/wrappers/WebsitePage/context/index';
 import websitePageHOC from '../src/components/wrappers/WebsitePage/hoc';
 import { ThemeProps } from '../src/theme/themeLight';
 
@@ -33,8 +33,7 @@ const ChatPage = () => {
   const [listaDeMensagens, setListaDeMensagens] = useState<MessageProps[]>([]);
   const [isLoadingMessages, setIsLoadingMessages] = useState<boolean>(true);
   // const { messageIdToDelete } = useContext();
-  const websitePageContext = useContext(WebsitePageContext);
-  console.log(websitePageContext.messageIdToDelete);
+  // const websitePageContext = useContext(WebsitePageContext);
 
   const router = useRouter();
   const { username } = router.query;
